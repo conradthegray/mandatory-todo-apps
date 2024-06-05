@@ -12,7 +12,7 @@ const schema = yup
   })
   .required();
 
-type Inputs = {
+type FormFields = {
   newTodo: string;
 };
 
@@ -24,9 +24,9 @@ const NewTodoForm = () => {
     reset,
     handleSubmit,
     formState: { isDirty, errors },
-  } = useForm<Inputs>({ mode: 'onChange', resolver: yupResolver(schema) });
+  } = useForm<FormFields>({ mode: 'onChange', resolver: yupResolver(schema) });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<FormFields> = (data) => {
     dispatch(
       add({
         task: data.newTodo,
