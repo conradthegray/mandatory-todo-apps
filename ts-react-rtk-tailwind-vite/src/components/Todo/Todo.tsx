@@ -30,6 +30,7 @@ const Todo = ({ id, task, done }: TodoProps) => {
       <button
         className="mr-3 flex h-6 w-6 items-center justify-center rounded text-center transition-all hover:bg-nord9 hover:shadow"
         onClick={handleMarkAsDone}
+        aria-label={done ? 'Mark as incomplete' : 'Mark as done'}
       >
         {done ? <VscDiscard /> : <VscCheck />}
       </button>
@@ -37,6 +38,7 @@ const Todo = ({ id, task, done }: TodoProps) => {
       <button
         className="mr-3 flex h-6 w-6 items-center justify-center rounded text-center transition-all hover:bg-nord11 hover:shadow"
         onClick={handleRemove}
+        aria-label="Remove"
       >
         <VscTrash />
       </button>

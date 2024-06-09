@@ -54,8 +54,9 @@ const NewTodoForm = () => {
           placeholder="What are you planning to do?"
         />
         <button
-          disabled={Boolean(!isDirty || errors.newTodo)}
           className="inline-flex h-11 w-11 items-center justify-center rounded-r-lg bg-nord3 text-nord14 shadow-md transition-all hover:bg-nord14 hover:text-nord3 disabled:opacity-50 disabled:hover:bg-nord3 disabled:hover:text-nord14"
+          aria-label="Add todo"
+          type="submit"
         >
           <VscAdd />
         </button>
